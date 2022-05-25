@@ -1,0 +1,13 @@
+<div class="p-5">
+<h1>Add a new restaurant</h1>
+<hr>
+<%= simple_form_for @restaurant do |f| %>
+  <%= f.input :name %>
+  <%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian"]%>
+  <%= f.input :address%>
+  <%= f.input :phone_number%>
+  <%= f.submit class: "btn btn-primary"%>
+<% end %>
+<hr>
+<%= link_to "Home page", restaurants_path, class: "btn btn-danger" %>
+</div>
