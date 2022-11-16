@@ -1,19 +1,20 @@
 <div class="p-5">
-<h1><%= @restaurant.name %></h1>
-<hr>
-<h2>Here are the details:</h2>
-<br>
-<p>Address: <%= @restaurant.address %></p>
-<p>Contact details: <%= @restaurant.phone_number %></p>
-<p>Category: <%= @restaurant.category %></p>
-<hr>
-<h2>Here are the reviews:</h2>
-<ul>
-<% @restaurant.reviews.each do |review| %>
-<li><%= review.content %> <%= "❤️ " * review.rating %></li>
-<% end %>
-</ul>
-<%= link_to "Add a new review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
-<hr>
-<%= link_to "Home page", restaurants_path, class: "btn btn-danger" %>
+  <h1><%= @restaurant.name %></h1>
+  <hr>
+  <h2>Here are the details:</h2>
+  <br>
+  <p>Address: <%= @restaurant.address %></p>
+  <p>Contact details: <%= @restaurant.phone_number %></p>
+  <p>Category: <%= @restaurant.category %></p>
+  <hr>
+  <h2>Here are the reviews:</h2>
+  <br>
+  <ul>
+    <% @restaurant.reviews.each do |review| %>
+      <li><%= review.content %> <%= "❤️" * review.rating %></li>
+    <% end %>
+  </ul>
+  <%= link_to "Add a new review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+  <hr>
+  <%= link_to "Home page", restaurants_path, class: "btn btn-danger" %>
 </div>
