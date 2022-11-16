@@ -14,7 +14,15 @@
       <li><%= review.content %> <%= "❤️" * review.rating %></li>
     <% end %>
   </ul>
-  <%= link_to "Add a new review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+  <br>
+  <h3>Leave a review!</h3>
+  <br>
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+    <%= f.input :rating, collection: 0..5 %>
+    <%= f.input :content%>
+    <%= f.submit class: 'btn btn-primary' %>
+  <% end %>
+  <%# <%= link_to "Add a new review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
   <hr>
   <%= link_to "Home page", restaurants_path, class: "btn btn-danger" %>
 </div>
